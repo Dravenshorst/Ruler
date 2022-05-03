@@ -117,6 +117,7 @@ class RuleBuilder implements \ArrayAccess
      *
      * @return boolean
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($name)
     {
         return isset($this->variables[$name]);
@@ -129,6 +130,7 @@ class RuleBuilder implements \ArrayAccess
      *
      * @return Variable
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($name)
     {
         if (!isset($this->variables[$name])) {
@@ -146,6 +148,7 @@ class RuleBuilder implements \ArrayAccess
      *
      * @return Variable
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($name, $value)
     {
         $this->offsetGet($name)->setValue($value);
@@ -156,6 +159,7 @@ class RuleBuilder implements \ArrayAccess
      *
      * @param string $name The Variable name
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($name)
     {
         unset($this->variables[$name]);
